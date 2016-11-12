@@ -1,6 +1,6 @@
 {
   "name": "react-delegate-transition-group",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "description": "Low-level API for custom animations",
   "main": "./lib/index.js",
   "scripts": {
