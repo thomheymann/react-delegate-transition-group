@@ -17,7 +17,9 @@ class DelegateTransitionGroup extends Component {
     }
 
     render() {
-        return createElement(TransitionGroup, { ...this.props, childFactory: this._wrapChild });
+        const { onAppear, onEnter, onLeave, ...rest } = this.props;
+
+        return createElement(TransitionGroup, { ...rest, childFactory: this._wrapChild });
     }
 }
 
