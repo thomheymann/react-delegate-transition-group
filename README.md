@@ -5,21 +5,21 @@ Low-level API for custom animations.
 Essentially the same as [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html#reacttransitiongroup) except that lifecycle hooks (called when children are added or removed) are handled by the container rather than each child component.
 
 
-### Installation
+## Installation
 
 ```
 npm install --save react-delegate-transition-group
 ```
 
 
-### Usage
+## Usage
 
 ```JavaScript
 import DelegateTransitionGroup from 'react-delegate-transition-group';
 import { createElement } from 'react';
 import { findDOMNode } from 'react-dom';
 
-class ExampleTransitionGroup extends Component {
+class ExampleAnimation extends Component {
 
     childWillEnter = (component, callback) => {
         const container = findDOMNode(this);
@@ -35,11 +35,16 @@ class ExampleTransitionGroup extends Component {
     
 }
 
-export default ExampleTransitionGroup;
+export default ExampleAnimation;
 ```
 
+For example implementations see:
 
-### Reference
+* [react-reveal-animation](https://github.com/cyberthom/react-reveal-animation)
+* [react-slide-animation](https://github.com/cyberthom/react-slide-animation)
+
+
+## Reference
 
 * `onAppear(component, callback)` - Called when components are mounted in a TransitionGroup.
 
