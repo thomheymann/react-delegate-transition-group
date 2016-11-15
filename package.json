@@ -11,6 +11,10 @@
   },
   "author": "Thomas Heymann <thom@totheskies.net> (http://totheskies.net/)",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cyberthom/react-delegate-transition-group"
+  },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0"
   },

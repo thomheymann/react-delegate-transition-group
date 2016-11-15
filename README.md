@@ -40,8 +40,8 @@ export default ExampleAnimation;
 
 For example implementations see:
 
-* [react-reveal-animation](https://github.com/cyberthom/react-reveal-animation)
 * [react-slide-animation](https://github.com/cyberthom/react-slide-animation)
+* [react-swap-animation](https://github.com/cyberthom/react-swap-animation)
 
 
 ## Reference
