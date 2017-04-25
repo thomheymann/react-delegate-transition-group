@@ -1,6 +1,7 @@
 import DelegateTransitionGroupChild from './DelegateTransitionGroupChild';
-import TransitionGroup from 'react/lib/ReactTransitionGroup';
-import { Component, PropTypes, createElement } from 'react';
+import PropTypes from 'prop-types';
+import { Component, createElement } from 'react';
+import { TransitionGroup } from 'react-transition-group';
 
 class DelegateTransitionGroup extends Component {
 

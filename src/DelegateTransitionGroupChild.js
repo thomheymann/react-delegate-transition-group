@@ -1,9 +1,10 @@
-import { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import { Component } from 'react';
 
 class DelegateTransitionGroupChild extends Component {
 
     static propTypes = {
-        children: PropTypes.element.isRequired,
+        children: PropTypes.node,
         onAppear: PropTypes.func,
         onEnter: PropTypes.func,
         onLeave: PropTypes.func

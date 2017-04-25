@@ -2,7 +2,7 @@
 
 Low-level API for custom animations.
 
-Essentially the same as [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html#reacttransitiongroup) except that lifecycle hooks (called when children are added or removed) are handled by the container rather than each child component.
+Essentially the same as [react-transition-group](https://github.com/reactjs/react-transition-group) except that lifecycle hooks (called when children are added or removed) are handled by the parent component rather than its children.
 
 
 ## Installation
@@ -20,19 +20,17 @@ import { createElement } from 'react';
 import { findDOMNode } from 'react-dom';
 
 class ExampleAnimation extends Component {
-
     childWillEnter = (component, callback) => {
-        const container = findDOMNode(this);
+        const parent = findDOMNode(this);
         const child = findDOMNode(component);
         const { height } = child.getBoundingClientRect();
-        container.style.height = `${height}px`;
+        parent.style.height = `${height}px`;
         setTimeout(callback, 400);
     }
 
     render() {
         return createElement(DelegateTransitionGroup, { ...this.props, onEnter: this.childWillEnter });
     }
-    
 }
 
 export default ExampleAnimation;
@@ -46,15 +44,15 @@ For example implementations see:
 
 ## Reference
 
-* `onAppear(component, callback)` - Called when components are mounted in a TransitionGroup.
+* `onAppear(component, callback)` - Called at the same time as componentDidMount() for components that are initially mounted in a DelegateTransitionGroup. 
 
-    It will block other animations from occurring until callback is called. It is only called on the initial render of a TransitionGroup.
+    It will block other animations from occurring until callback is called. It is only called on the initial render of a DelegateTransitionGroup
 
-* `onEnter(component, callback)` -  Called when components are added to an existing TransitionGroup. 
+* `onEnter(component, callback)` - Called at the same time as componentDidMount() for components added to an existing DelegateTransitionGroup. 
 
     It will block other animations from occurring until callback is called. It will not be called on the initial render of a TransitionGroup.
 
-* `onLeave(component, callback)` -  Called when the child has been removed from the TransitionGroup. 
+* `onLeave(component, callback)` - Called when the child has been removed from the DelegateTransitionGroup. 
 
-    Though the child has been removed, TransitionGroup will keep it in the DOM until callback is called.
+    Though the child has been removed, DelegateTransitionGroup will keep it in the DOM until callback is called.
 
