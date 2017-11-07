@@ -16,8 +16,8 @@
     "url": "https://github.com/cyberthom/react-delegate-transition-group"
   },
   "peerDependencies": {
-    "react": "^0.14.9 || ^15.3.0",
-    "react-dom": "^0.14.9 || ^15.3.0"
+    "react": "^0.14.9 || ^15.3.0 || ^16.0.0",
+    "react-dom": "^0.14.9 || ^15.3.0 || ^16.0.0"
   },
   "dependencies": {
     "prop-types": "^15.5.0",
